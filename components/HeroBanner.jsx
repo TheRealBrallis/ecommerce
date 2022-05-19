@@ -22,7 +22,7 @@ const HeroBanner = ({ heroBanner }) => {
           </div>
           <img
             src={urlFor(heroBanner.image)}
-            alt="headphones"
+            alt="Lady"
             className="hero-banner-image"
           />
         </div>
