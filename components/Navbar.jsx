@@ -3,7 +3,12 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { FiUser } from "react-icons/fi";
 import Link from "next/link";
 
+import { Cart } from "./";
+import { useStateContext } from "../context/StateContext";
+
 const Navbar = () => {
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
+
   return (
     <nav className="navbar-container">
       <div className="navbar-logo">
@@ -23,8 +28,17 @@ const Navbar = () => {
         )}
       </ul>
       <div className="navbar-icons">
-        <HiOutlineShoppingBag />
+        <button
+          type="button"
+          className="cart-icon"
+          onClick={() => setShowCart(true)}
+        >
+          <HiOutlineShoppingBag />
+          <span className="cart-item-qty">{totalQuantities}</span>
+        </button>
         <FiUser />
+
+        {showCart && <Cart />}
       </div>
     </nav>
   );

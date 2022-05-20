@@ -8,7 +8,7 @@ import {
 
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
-// import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, price, description, sizes, details, color, detailInfo } =
@@ -16,7 +16,7 @@ const ProductDetails = ({ product, products }) => {
   const [index, setIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState("S");
   const [selectedView, setSelectedView] = useState("desc");
-  // const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
   // const handleBuyNow = () => {
   //   onAdd(product, qty);
@@ -83,11 +83,11 @@ const ProductDetails = ({ product, products }) => {
               <p className="detail-title">Quantity</p>
               <p>:</p>
               <p className="quantity-desc">
-                <span className="minus" onClick="">
+                <span className="minus" onClick={decQty}>
                   <AiOutlineMinus />
                 </span>
-                <span className="num">0</span>
-                <span className="plus" onClick="">
+                <span className="num">{qty}</span>
+                <span className="plus" onClick={incQty}>
                   <AiOutlinePlus />
                 </span>
               </p>
@@ -100,7 +100,7 @@ const ProductDetails = ({ product, products }) => {
             </div>
           </div>
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick="">
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>
               Add to Cart
             </button>
             <button type="button" className="buy-now" onClick="">

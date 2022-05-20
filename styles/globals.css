@@ -84,7 +84,8 @@ a {
 .navbar-icons {
   display: flex;
   width: 20%;
-  font-size: 1.2rem;
+  font-size: 25px;
+  color: gray;
 }
 .navbar-icons svg {
   margin-right: 20px;
@@ -143,7 +144,7 @@ span.text-red {
 }
 .cart-item-qty {
   position: absolute;
-  right: -8px;
+  right: 15px;
   font-size: 12px;
   color: #eee;
   background-color: #f02d34;
