@@ -644,6 +644,9 @@ span.text-red {
 .product-detail-desc {
   width: 35%;
 }
+.product-detail-desc h1 {
+  color: #4b4b4b;
+}
 .product-detail-desc h4 {
   margin-top: 10px;
 }
@@ -700,41 +703,93 @@ span.text-red {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .product-size p {
   text-align: center;
   margin: 0;
 }
+.product-size-selected {
+  background-color: #f04639;
+  color: #fff
+}
+.product-info {
+  margin-left: 20.7%;
+  width: 600px;
+}
+.detail-row {
+  color: #4b4b4b;
+  font-size: 16px;
+  padding: 0.5rem;
+  display: flex;
+  gap: 5rem;
+}
+.detail-row p:first-of-type {
+  width: 20%;
+  color: #4b4b4b;
+}
+.detail-row p:last-of-type {
+font-size: 15px;
+font-weight: 400;
+color: #818181
+}
+.detail-row:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+.hidden {
+  display: none;
+}
+.product-info-button {
+  padding: 10px 16px;
+  background-color: white;
+  color: #000;
+  border: none;
+  border: 1px solid #707070;
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.product-info-button-selected {
+  background-color: #f04639;
+  color: #fff;
+  border: none;
+}
 .detail-title {
   width: 5%;
 }
 .buttons .add-to-cart {
-  padding: 10px 20px;
-  border: 1px solid #f02d34;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: white;
-  color: #f02d34;
-  cursor: pointer;
-  width: 200px;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+
+  padding: 10px 16px;
+  border-radius: 3px;
+  background-color: #f02d34;
+  box-shadow: 0px 10px 19px #eea6a1;
+  color: white;
+  border: none;
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 150px;
 }
 .buttons .add-to-cart:hover {
   transform: scale(1.1, 1.1);
 }
 .buttons .buy-now {
-  width: 200px;
-
-  padding: 10px 20px;
-  background-color: #f02d34;
-  color: white;
-  border: none;
+  padding: 10px 16px;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
   margin-top: 40px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  width: 150px;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
 }

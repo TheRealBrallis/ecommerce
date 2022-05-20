@@ -34,7 +34,31 @@ export default {
     {
       name: 'details',
       title: 'Details',
-      type: 'string',
+      type: 'array',
+      of: [
+        {
+          name: 'detail',
+          title: 'Detail',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string'
+            }, 
+            {
+              title: 'Info',
+              name: 'info',
+              type: 'string'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'color',
+      title: 'Color',
+      type: 'string'
     },
     {
       name: 'description',
