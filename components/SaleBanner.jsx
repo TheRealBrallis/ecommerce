@@ -25,7 +25,7 @@ const SaleBanner = ({ saleBanner }) => {
         <p className="sale-text">{saleBanner[0]?.largeText1}</p>
         <p className="sale-text">{saleBanner[0]?.largeText2}</p>
         <img
-          src={urlFor(saleBanner[2]?.image)}
+          src={urlFor(saleBanner[0]?.image)}
           alt="Lady"
           className="arrival-banner-image"
         />
