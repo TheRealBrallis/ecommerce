@@ -6,17 +6,17 @@ const SaleBanner = ({ saleBanner }) => {
   return (
     <div className="sale-banner-container">
       <div className="sale-offer">
-        <p className="sale-text">{saleBanner[1]?.largeText1}</p>
-        <p className="sale-text">{saleBanner[1]?.largeText2}</p>
+        <p className="sale-text">{saleBanner[3]?.largeText1}</p>
+        <p className="sale-text">{saleBanner[3]?.largeText2}</p>
         <img
-          src={urlFor(saleBanner[1]?.image)}
+          src={urlFor(saleBanner[3]?.image)}
           alt="Lady"
           className="sale-banner-image"
         />
 
         <div>
-          <Link href={`/product/${saleBanner[1]?.product}`}>
-            <button type="button">{saleBanner[1]?.buttonText}</button>
+          <Link href={`/product/${saleBanner[3]?.product}`}>
+            <button type="button">{saleBanner[3]?.buttonText}</button>
           </Link>
         </div>
       </div>

@@ -11,18 +11,17 @@ import { Product } from "../../components";
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
-  const { image, name, price, description, sizes, details, color, detailInfo } =
+  const { image, name, price, description, sizes, details, color, currentSize } =
     product;
   const [index, setIndex] = useState(0);
-  const [selectedSize, setSelectedSize] = useState("S");
   const [selectedView, setSelectedView] = useState("desc");
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart, selectedSize, setSelectedSize } = useStateContext();
 
-  // const handleBuyNow = () => {
-  //   onAdd(product, qty);
+  const handleBuyNow = () => {
+    onAdd(product, qty, selectedSize);
 
-  //   setShowCart(true);
-  // }
+    setShowCart(true);
+  }
 
   return (
     <div>
@@ -64,8 +63,11 @@ const ProductDetails = ({ product, products }) => {
               <p className="detail-title">Size</p>
               <p>:</p>
               <div className="product-size-container">
-                {sizes?.map((size) => (
-                  <div
+                {sizes?.map((size, i) => {
+                    let test = currentSize[0] = selectedSize
+                    console.log(test)
+                  return (<div
+                    key={i}
                     className={
                       size === selectedSize
                         ? "product-size product-size-selected"
@@ -75,7 +77,7 @@ const ProductDetails = ({ product, products }) => {
                   >
                     <p>{size}</p>
                   </div>
-                ))}
+                )})}
               </div>
             </div>
 
@@ -100,10 +102,10 @@ const ProductDetails = ({ product, products }) => {
             </div>
           </div>
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty, selectedSize)}>
               Add to Cart
             </button>
-            <button type="button" className="buy-now" onClick="">
+            <button type="button" className="buy-now" onClick={handleBuyNow}>
               Buy Now
             </button>
           </div>
@@ -156,8 +158,8 @@ const ProductDetails = ({ product, products }) => {
             selectedView === "details" ? "product-info-details" : "hidden"
           }
         >
-          {details?.map((detail) => (
-            <div className="detail-row">
+          {details?.map((detail, i) => (
+            <div key={i} className="detail-row">
               <p>{detail.title}</p>
               <p>{detail.info}</p>
             </div>

@@ -7,12 +7,14 @@ import {
   HeroBanner,
   Info,
   SaleBanner,
+  TrendingBanner,
 } from "../components";
 
 const Home = ({ products, bannerData }) => {
+  console.log(bannerData)
   return (
     <>
-      <HeroBanner heroBanner={bannerData.length && bannerData[2]} />
+      <HeroBanner heroBanner={bannerData.length && bannerData[4]} />
       <Info />
       <SaleBanner saleBanner={bannerData.length && bannerData} />
 
@@ -27,7 +29,20 @@ const Home = ({ products, bannerData }) => {
         ))}
       </div>
 
-      <FooterBanner />
+      <TrendingBanner trendingBanner={bannerData.length && bannerData}/>
+
+      <div className="products-heading">
+        <p>Best Seller Products</p>
+        <p>Top view in this week</p>
+      </div>
+
+      <div className="products-container">
+        {products?.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
+
+      <FooterBanner footerBanner={bannerData.length && bannerData[5]}/>
     </>
   );
 };

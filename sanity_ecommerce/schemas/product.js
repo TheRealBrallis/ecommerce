@@ -76,6 +76,19 @@ export default {
           type: 'string'
         }
       ]
+    },
+    {
+      name: 'currentSize',
+      title: 'CurrentSize',
+      type: 'array',
+      of: [
+        {
+          name: 'current',
+          title: 'Current',
+          type: 'string',
+        }
+      ]
     }
+
   ]
 }
