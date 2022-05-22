@@ -34,7 +34,61 @@ export default {
     {
       name: 'details',
       title: 'Details',
-      type: 'string',
+      type: 'array',
+      of: [
+        {
+          name: 'detail',
+          title: 'Detail',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string'
+            }, 
+            {
+              title: 'Info',
+              name: 'info',
+              type: 'string'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'color',
+      title: 'Color',
+      type: 'string'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'string'
+    },
+    {
+      name: 'sizes',
+      title: 'Sizes',
+      type: 'array',
+      of: [
+        {
+          name:'size',
+          title: 'Size',
+          type: 'string'
+        }
+      ]
+    },
+    {
+      name: 'currentSize',
+      title: 'CurrentSize',
+      type: 'array',
+      of: [
+        {
+          name: 'current',
+          title: 'Current',
+          type: 'string',
+        }
+      ]
     }
+
   ]
 }
