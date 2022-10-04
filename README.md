@@ -1,7 +1,7 @@
 # Ecommerce showcase
 This project is built with [Next.js](https://nextjs.org/), [Sanity.io](https://sanity.io/) and [Stripe](https://stripe.com)
 
-Sanity is used as a content management system and stipe is used for payment.
+Sanity is used as a content management system and stripe is used for payment.
 
 This project is ment for me to practice my skills as a frontend developer and includes technics such as sorting, filtering and data fetching.
 I'm not acually selling the products on the website but you can still go through with a purchase by paying with a test card.
